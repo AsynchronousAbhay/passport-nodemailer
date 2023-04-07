@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Signin...</h1>
+  <form action="/signin" method="post">
+    <input type="text" placeholder="#username" name="username"><br><br>
+    <input type="password" placeholder="*******" name="password" class="showPassword"><br><br>
+    showPassword <input type="checkbox" onclick="myFunction()"><br><br>
+    <button>signin</button><br><br>
+  </form>
+  <br>
+  <br>
+  <a href="/">
+    signup
+  </a>
+  <br>
+  <br>
+  <a href="/forget">forget password!</a>
+
+</body>
+
+</html>
+
+
+<script>
+
+  function myFunction() {
+    var x = document.querySelector('.showPassword');
+    if (x.type === 'password') {
+      x.type = 'text';
+    }
+    else {
+      x.type = "password";
+    }
+  }
+
+</script>
