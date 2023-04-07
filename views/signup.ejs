@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Signup...</h1>
+  <form action="/signup" method="post" onsubmit="return myFuntion()">
+    <input type="text" placeholder="#username" name="username"><br><br>
+    <input type="text" placeholder="name" name="name"><br><br>
+    <input type="email" placeholder="example@email.com" name="email"><br><br>
+    <input type="text" placeholder="phone no." name="phone"><br><br>
+    <label for="createPwd">Create password:</label>
+    <input type="password" placeholder="*******" name="password" id="createPwd" value="" onkeyup="checkPWD(this.value)">
+    <span style="color: red;" id="newpwd_message"></span><br><br>
+    Show password <input type="checkbox" id="toggleBtn"><br><br>
+    <!-- <label for="cnfrmpassword">conform password:</label>
+    <input type="password" placeholder="conform password" name="password" id="cnfrmpassword" value="">
+    <span style="color: red;" id="cnfrmpwd_message"></span><br><br> -->
+    <input type="submit" id="signupBtn" value="signup"><br><br>
+  </form>
+
+  <a href="/signin">
+    signin
+  </a>
+
+</body>
+
+</html>
+
+<script>
+
+  let createPwd = document.getElementById('createPwd');
+  let toggleBtn = document.getElementById('toggleBtn');
+
+
+//show password::: 
+
+  toggleBtn.onclick = function(){
+    if(createPwd.type === "password"){
+      createPwd.setAttribute('type', 'text');
+      toggleBtn.classList.add('hide');
+    }
+    else{
+      createPwd.setAttribute('type', 'password');
+      toggleBtn.classList.remove('hide');
+    }
+  }
+
+
+// ----------------------------------------------------------------------------
+  // function myFuntion() {
+  //   var a = document.getElementById('createPwd').value;
+
+  //   if (a === '') {
+  //     document.getElementById('newpwd_message').innerHTML = "** Please Fill Password";
+  //     return false;
+  //   }
+
+  // }
+
+// ----------------------------------------------------------------------------------------
+  // function checkPassword() {
+  //   let signupButton = document.getElementById('signupBtn');
+  //   signupButton.addEventListener('clikc', () => {
+  //     let createPassword = document.getElementById('createPwd').value;
+  //     let confrompassword = document.getElementById('cnfrmpassword').value;
+  //     console.log(createPassword, confrompassword);
+  //   });
+  // }
+
+  // checkPassword()
+
+</script>
